@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTG: Versatile Transition Generation with Image-to-Video Diffusion Priors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 2em;
+            justify-content: center;
+            color: #333;
+        }
+        .image-container {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px; /* Space between rows */
+        }
+        .column-text {
+            font-weight: bold;
+        }
+        .image-container img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        .text-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Space between rows */
+        }
+        .text-box {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            border: none;
+            width: 150px;
+            height: 120px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visual Comparisons on Four Representative Transition Tasks</h1>
+    <h2>Object Morphing</h2>
+    <div class="image-container">
+        <div class="column">
+            <div class="column-text">First Frame</div>
+            <img src="images/morph1_0.png" alt="Object Morphing 1">
+            <img src="images/morph2_0.png" alt="Object Morphing 2">
+            <img src="images/morph3_0.png" alt="Object Morphing 3">
+            <img src="images/morph4_0.png" alt="Object Morphing 4">
+            <img src="images/morph5_0.png" alt="Object Morphing 5">
+        </div>
+        <div class="column">
+            <div class="column-text">Last Frame</div>
+            <img src="images/morph1_1.png" alt="Object Morphing 1">
+            <img src="images/morph2_1.png" alt="Object Morphing 2">
+            <img src="images/morph3_1.png" alt="Object Morphing 3">
+            <img src="images/morph4_1.png" alt="Object Morphing 4">
+            <img src="images/morph5_1.png" alt="Object Morphing 5">
+ 
+        </div>
+        <div class="text-column">
+            <div class="column-text">Text Prompts</div>
+            <div class="text-box">a cat is sitting and facing to the right; a dog is sitting and facing forward</div>
+            <div class="text-box">an alpaca is facing forward; an alpaca is facing to the right</div>
+            <div class="text-box">a dog wearing sunglasses is facing forward;  a dog wearing sunglasses is facing to the right</div>
+            <div class="text-box">a sculpture; a sculpture has turned his head a bit to the right</div>
+            <div class="text-box">a boy is facing forward; a boy is turning his head to the right and smiling</div>
+        </div>
+        <div class="column">
+            <div class="column-text">Ours</div>
+            <img src="images/morph1_ours.gif" alt="Object Morphing Ours 1">
+            <img src="images/morph2_ours.gif" alt="Object Morphing Ours 2">
+            <img src="images/morph3_ours.gif" alt="Object Morphing Ours 3">
+            <img src="images/morph4_ours.gif" alt="Object Morphing Ours 4">
+            <img src="images/morph5_ours.gif" alt="Object Morphing Ours 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DiffMorpher</div>
+            <img src="images/morph1_diff.gif" alt="Object Morphing DiffMorpher 1">
+            <img src="images/morph2_diff.gif" alt="Object Morphing DiffMorpher 2">
+            <img src="images/morph3_diff.gif" alt="Object Morphing DiffMorpher 3">
+            <img src="images/morph4_diff.gif" alt="Object Morphing DiffMorpher 4">
+            <img src="images/morph5_diff.gif" alt="Object Morphing DiffMorpher 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SEINE</div>
+            <img src="images/morph1_seine.gif" alt="Object Morphing SEINE 1">
+            <img src="images/morph2_seine.gif" alt="Object Morphing SEINE 2">
+            <img src="images/morph3_seine.gif" alt="Object Morphing SEINE 3">
+            <img src="images/morph4_seine.gif" alt="Object Morphing SEINE 4">
+            <img src="images/morph5_seine.gif" alt="Object Morphing SEINE 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DynamiCrafter</div>
+            <img src="images/morph1_dyna.gif" alt="Object Morphing DynamiCrafter 1">
+            <img src="images/morph2_dyna.gif" alt="Object Morphing DynamiCrafter 2">
+            <img src="images/morph3_dyna.gif" alt="Object Morphing DynamiCrafter 3">
+            <img src="images/morph4_dyna.gif" alt="Object Morphing DynamiCrafter 4">
+            <img src="images/morph5_dyna.gif" alt="Object Morphing DynamiCrafter 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SGM-VFI</div>
+            <img src="images/morph1_sgm.gif" alt="Object Morphing SGM-VFI 1">
+            <img src="images/morph2_sgm.gif" alt="Object Morphing SGM-VFI 2">
+            <img src="images/morph3_sgm.gif" alt="Object Morphing SGM-VFI 3">
+            <img src="images/morph4_sgm.gif" alt="Object Morphing SGM-VFI 4">
+            <img src="images/morph5_sgm.gif" alt="Object Morphing SGM-VFI 5">
+        </div>
+
+    </div>
+    <br><br>
+    <h2>Motion Prediction</h2>
+    <div class="image-container">
+        <div class="column">
+            <div class="column-text">First Frame</div>
+            <img src="images/motion1_0.png" alt="Motion Prediction 1">
+            <img src="images/motion2_0.png" alt="Motion Prediction 2">
+            <img src="images/motion3_0.png" alt="Motion Prediction 3">
+            <img src="images/motion4_0.png" alt="Motion Prediction 4">
+            <img src="images/motion5_0.png" alt="Motion Prediction 5">
+        </div>
+        <div class="column">
+            <div class="column-text">Last Frame</div>
+            <img src="images/motion1_1.png" alt="Motion Prediction 1">
+            <img src="images/motion2_1.png" alt="Motion Prediction 2">
+            <img src="images/motion3_1.png" alt="Motion Prediction 3">
+            <img src="images/motion4_1.png" alt="Motion Prediction 4">
+            <img src="images/motion5_1.png" alt="Motion Prediction 5">
+ 
+        </div>
+        <div class="text-column">
+            <div class="column-text">Text Prompts</div>
+            <div class="text-box">a camel is walking slowly to the right</div>
+            <div class="text-box">a woman is swinging on a swinging</div>
+            <div class="text-box">a woman is riding a horse</div>
+            <div class="text-box">a man is surfing</div>
+            <div class="text-box">a woman is walking</div>
+        </div>
+        <div class="column">
+            <div class="column-text">Ours</div>
+            <img src="images/motion1_ours.gif" alt="Motion Prediction Ours 1">
+            <img src="images/motion2_ours.gif" alt="Motion Prediction Ours 2">
+            <img src="images/motion3_ours.gif" alt="Motion Prediction Ours 3">
+            <img src="images/motion4_ours.gif" alt="Motion Prediction Ours 4">
+            <img src="images/motion5_ours.gif" alt="Motion Prediction Ours 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DiffMorpher</div>
+            <img src="images/motion1_diff.gif" alt="Motion Prediction DiffMorpher 1">
+            <img src="images/motion2_diff.gif" alt="Motion Prediction DiffMorpher 2">
+            <img src="images/motion3_diff.gif" alt="Motion Prediction DiffMorpher 3">
+            <img src="images/motion4_diff.gif" alt="Motion Prediction DiffMorpher 4">
+            <img src="images/motion5_diff.gif" alt="Motion Prediction DiffMorpher 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SEINE</div>
+            <img src="images/motion1_seine.gif" alt="Motion Prediction SEINE 1">
+            <img src="images/motion2_seine.gif" alt="Motion Prediction SEINE 2">
+            <img src="images/motion3_seine.gif" alt="Motion Prediction SEINE 3">
+            <img src="images/motion4_seine.gif" alt="Motion PredictionSEINE 4">
+            <img src="images/motion5_seine.gif" alt="Motion Prediction SEINE 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DynamiCrafter</div>
+            <img src="images/motion1_dyna.gif" alt="Motion Prediction DynamiCrafter 1">
+            <img src="images/motion2_dyna.gif" alt="Motion Prediction DynamiCrafter 2">
+            <img src="images/motion3_dyna.gif" alt="Motion Prediction DynamiCrafter 3">
+            <img src="images/motion4_dyna.gif" alt="Motion Prediction DynamiCrafter 4">
+            <img src="images/motion5_dyna.gif" alt="Motion Prediction DynamiCrafter 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SGM-VFI</div>
+            <img src="images/motion1_sgm.gif" alt="Motion Prediction SGM-VFI 1">
+            <img src="images/motion2_sgm.gif" alt="Motion Prediction SGM-VFI 2">
+            <img src="images/motion3_sgm.gif" alt="Motion Prediction SGM-VFI 3">
+            <img src="images/motion4_sgm.gif" alt="Motion Prediction SGM-VFI 4">
+            <img src="images/motion5_sgm.gif" alt="Motion Prediction SGM-VFI 5">
+        </div>
+
+    </div>
+    
+     <br><br>
+     <h2>Concept Blending</h2>
+    <div class="image-container">
+        <div class="column">
+            <div class="column-text">First Frame</div>
+            <img src="images/blend1_0.png" alt="Concept Blending 1">
+            <img src="images/blend2_0.png" alt="Concept Blending 2">
+            <img src="images/blend3_0.png" alt="Concept Blending 3">
+            <img src="images/blend4_0.png" alt="Concept Blending 4">
+            <img src="images/blend5_0.png" alt="Concept Blending 5">
+        </div>
+        <div class="column">
+            <div class="column-text">Last Frame</div>
+            <img src="images/blend1_1.png" alt="Concept Blending 1">
+            <img src="images/blend2_1.png" alt="Concept Blending 2">
+            <img src="images/blend3_1.png" alt="Concept Blending 3">
+            <img src="images/blend4_1.png" alt="Concept Blending 4">
+            <img src="images/blend5_1.png" alt="Concept Blending 5">
+ 
+        </div>
+        <div class="text-column">
+            <div class="column-text">Text Prompts</div>
+            <div class="text-box">a lion; a truck</div>
+            <div class="text-box">an airplane; a cruise</div>
+            <div class="text-box">a bathtub; a bookshelf</div>
+            <div class="text-box">a bench; a cup of tea</div>
+            <div class="text-box">a merry-go-round; a mouse</div>
+        </div>
+        <div class="column">
+            <div class="column-text">Ours</div>
+            <img src="images/blend1_ours.gif" alt="Concept Blending Ours 1">
+            <img src="images/blend2_ours.gif" alt="Concept Blending Ours 2">
+            <img src="images/blend3_ours.gif" alt="Concept Blending Ours 3">
+            <img src="images/blend4_ours.gif" alt="Concept Blending Ours 4">
+            <img src="images/blend5_ours.gif" alt="Concept Blending Ours 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DiffMorpher</div>
+            <img src="images/blend1_diff.gif" alt="Concept Blending DiffMorpher 1">
+            <img src="images/blend2_diff.gif" alt="Concept Blending DiffMorpher 2">
+            <img src="images/blend3_diff.gif" alt="Concept Blending DiffMorpher 3">
+            <img src="images/blend4_diff.gif" alt="Concept Blending DiffMorpher 4">
+            <img src="images/blend5_diff.gif" alt="Concept Blending DiffMorpher 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SEINE</div>
+            <img src="images/blend1_seine.gif" alt="Concept Blending SEINE 1">
+            <img src="images/blend2_seine.gif" alt="Concept Blending SEINE 2">
+            <img src="images/blend3_seine.gif" alt="Concept Blending SEINE 3">
+            <img src="images/blend4_seine.gif" alt="Concept Blending SEINE 4">
+            <img src="images/blend5_seine.gif" alt="Concept Blending SEINE 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DynamiCrafter</div>
+            <img src="images/blend1_dyna.gif" alt="Concept Blending DynamiCrafter 1">
+            <img src="images/blend2_dyna.gif" alt="Concept Blending DynamiCrafter 2">
+            <img src="images/blend3_dyna.gif" alt="Concept Blending DynamiCrafter 3">
+            <img src="images/blend4_dyna.gif" alt="Concept Blending DynamiCrafter 4">
+            <img src="images/blend5_dyna.gif" alt="Concept Blending DynamiCrafter 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SGM-VFI</div>
+            <img src="images/blend1_sgm.gif" alt="Concept Blending SGM-VFI 1">
+            <img src="images/blend2_sgm.gif" alt="Concept Blending SGM-VFI 2">
+            <img src="images/blend3_sgm.gif" alt="Concept Blending SGM-VFI 3">
+            <img src="images/blend4_sgm.gif" alt="Concept Blending SGM-VFI 4">
+            <img src="images/blend5_sgm.gif" alt="Concept Blending SGM-VFI 5">
+        </div>
+
+    </div>
+    
+     <br><br>
+    <h2>Scene Transition</h2>
+    <div class="image-container">
+        <div class="column">
+            <div class="column-text">First Frame</div>
+            <img src="images/scene1_0.png" alt="Scene Transition 1">
+            <img src="images/scene2_0.png" alt="Scene Transition 2">
+            <img src="images/scene3_0.png" alt="Scene Transition 3">
+            <img src="images/scene4_0.png" alt="Scene Transition 4">
+            <img src="images/scene5_0.png" alt="Scene Transition 5">
+        </div>
+        <div class="column">
+            <div class="column-text">Last Frame</div>
+            <img src="images/scene1_1.png" alt="Scene Transition 1">
+            <img src="images/scene2_1.png" alt="Scene Transition 2">
+            <img src="images/scene3_1.png" alt="Scene Transition 3">
+            <img src="images/scene4_1.png" alt="Scene Transition 4">
+            <img src="images/scene5_1.png" alt="Scene Transition 5">
+ 
+        </div>
+        <div class="text-column">
+            <div class="column-text">Text Prompts</div>
+            <div class="text-box">wide angle shot of an erupting volcano; close-up shot of hot lava</div>
+            <div class="text-box">close-up shot of a blooming cheery tree; wide angle shot of an alien cheery blossom forest</div>
+            <div class="text-box">overhead view of a bustling city street; aerial view of a futuristic city</div>
+            <div class="text-box">close-up shot of a candle lit; wide angle shot of a mystical land</div>
+            <div class="text-box">a wooden house in the forest; a wooden house in the snow</div>
+        </div>
+        <div class="column">
+            <div class="column-text">Ours</div>
+            <img src="images/scene1_ours.gif" alt="Scene Transition Ours 1">
+            <img src="images/scene2_ours.gif" alt="Scene Transition Ours 2">
+            <img src="images/scene3_ours.gif" alt="Scene Transition Ours 3">
+            <img src="images/scene4_ours.gif" alt="Scene Transition Ours 4">
+            <img src="images/scene5_ours.gif" alt="Scene Transition Ours 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DiffMorpher</div>
+            <img src="images/scene1_diff.gif" alt="Scene Transition DiffMorpher 1">
+            <img src="images/scene2_diff.gif" alt="Scene Transition DiffMorpher 2">
+            <img src="images/scene3_diff.gif" alt="Scene Transition DiffMorpher 3">
+            <img src="images/scene4_diff.gif" alt="Scene Transition DiffMorpher 4">
+            <img src="images/scene5_diff.gif" alt="Scene Transition DiffMorpher 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SEINE</div>
+            <img src="images/scene1_seine.gif" alt="Scene Transition SEINE 1">
+            <img src="images/scene2_seine.gif" alt="Scene Transition SEINE 2">
+            <img src="images/scene3_seine.gif" alt="Scene Transition SEINE 3">
+            <img src="images/scene4_seine.gif" alt="Scene Transition SEINE 4">
+            <img src="images/scene5_seine.gif" alt="Scene Transition SEINE 5">
+        </div>
+        <div class="column">
+            <div class="column-text">DynamiCrafter</div>
+            <img src="images/scene1_dyna.gif" alt="Scene Transition DynamiCrafter 1">
+            <img src="images/scene2_dyna.gif" alt="Scene Transition DynamiCrafter 2">
+            <img src="images/scene3_dyna.gif" alt="Scene Transition DynamiCrafter 3">
+            <img src="images/scene4_dyna.gif" alt="Scene Transition DynamiCrafter 4">
+            <img src="images/scene5_dyna.gif" alt="Scene Transition DynamiCrafter 5">
+        </div>
+        <div class="column">
+            <div class="column-text">SGM-VFI</div>
+            <img src="images/scene1_sgm.gif" alt="Scene Transition SGM-VFI 1">
+            <img src="images/scene2_sgm.gif" alt="Scene Transition SGM-VFI 2">
+            <img src="images/scene3_sgm.gif" alt="Scene Transition SGM-VFI 3">
+            <img src="images/scene4_sgm.gif" alt="Scene Transition SGM-VFI 4">
+            <img src="images/scene5_sgm.gif" alt="Scene Transition SGM-VFI 5">
+        </div>
+
+    </div>
+
+</body>
+<br>
+</html>

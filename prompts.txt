@@ -1,0 +1,29 @@
+morph1: a cat is sitting and facing to the right; a dog is sitting and facing forward
+morph2: an alpaca is facing forward; an alpaca is facing to the right
+morph3: a dog wearing sunglasses is facing forward;  a dog wearing sunglasses is facing to the right
+morph4: a sculpture; a sculpture has turned his head a bit to the right
+morph5: a boy is facing forward; a boy is turning his head to the right and smiling
+
+motion1: a camel is walking slowly to the right
+motion2: a woman is swinging on a swinging
+motion3: a woman is riding a horse
+motion4: a man is surfing
+motion5: a woman is walking
+
+blend1: a lion; a truck
+blend2: an airplane; a cruise
+blend3: a bathtub; a bookshelf
+blend4: a bench; a cup of tea
+blend5: a merry-go-round; a mouse
+
+scene1: an erupting volcano is transforming into hot lava
+scene2: a close-up shot of a blooming cheery tree is transforming into a wide angle shot of an alien cheery blossom forest
+scene3: an overhead view of a bustling city street is transforming into an aerial view of a futuristic city
+scene4: a close-up shot of a candle lit is transforming into a wide angle shot of a mystical land
+scene5: a wooden house in the forest is transforming into a wooden house in the snow
+
+_diff: DiffMorpher
+_sgm: SGM-VFI
+_seine: SEINE
+_dyna: DynamiCrater
+_ours: Ours
