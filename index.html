@@ -549,7 +549,7 @@
             <div class="text-box">camel's moving trajectory (red) & camera movement (green)</div>
             <div class="text-box">dog's moving trajectory (red) & camera movement (green)</div>
             <div class="text-box">dandelion's shaking trajectory (red) & camera movement (green)</div>
-            <div class="text-box">jet's moving trajectory (red) & changing background (blue)</div>
+            <div class="text-box">jet's moving trajectory (red) & changing background (blue) & camera movement (green)</div>
         </div>
         <div class="column">
             <div class="column-text">VTG</div>
@@ -568,60 +568,51 @@
     </div>
 
     <br><br>
-    <h2>Failed Cases</h2>
-    <div class="image-container">
-        <div class="column">
-            <div class="column-text">First Frame</div>
-            <img src="images/lscene1_0.png" alt="Challenging Scene Transition 1">
-            <img src="images/lscene2_0.png" alt="challenging Scene Transition 2">
+        <h2>Failed Cases</h2>
+        <div class="image-container">
+            <div class="column">
+                <div class="column-text">First Frame</div>
+                <img src="images/car_turn_first_frame.png" alt="complex obj large cam first">
+                <img src="images/man_skate_first_frame.png" alt="composite obj large cam first">
+                <img src="images/car_relative_first_frame.png" alt="relative unchanged first">
+            </div>
+            <div class="column">
+                <div class="column-text">Last Frame</div>
+                <img src="images/car_turn_last_frame.png" alt="complex obj large cam last">
+                <img src="images/man_skate_last_frame.png" alt="composite obj large cam last">
+                <img src="images/car_relative_last_frame.png" alt="relative unchanged last">
+            </div>
+            <div class="text-column">
+                <div class="column-text">Text Prompt</div>
+                <div class="text-box">a car is turning</div>
+                <div class="text-box">a man is skateboarding uphill</div>
+                <div class="text-box">a car is moving in high speed</div>
+            </div> 
+            <div class="column">
+                <div class="column-text">Annotated Frame</div>
+                <img src="images/car_turn_annotated_first_frame.png" alt="complex obj large cam anno">
+                <img src="images/man_skate_annotated_first_frame.png" alt="composite obj large cam anno">
+                <img src="images/car_relative_annotated_first_frame.png" alt="relative unchanged anno">
+            </div>
+            <div class="column">
+                <div class="column-text">Annotation Types</div>
+                <div class="text-box">car's moving trajectory (red) & camera movement (green)</div>
+                <div class="text-box">man's two-stage moving trajectory (red) & camera movement (green)</div>
+                <div class="text-box">car's moving trajectory (red) & almost unchanged background (blue)</div>
+            </div>
+            <div class="column">
+                <div class="column-text">VTG</div>
+                <img src="images/car_turn.gif" alt="complex obj large cam gif">
+                <img src="images/man_skate.gif" alt="composite obj large cam gif">
+                <img src="images/car_relative.gif" alt="relative unchanged gif">
+            </div>
+            <div class="column">
+                <div class="column-text">Motion Pattern</div>
+                <div class="text-box">complex object trajectory with large camera movement</div>
+                <div class="text-box">composite object trajectory with large camera movement</div>
+                <div class="text-box">relative movement with almost unchanged background</div>
+            </div>
         </div>
-        <div class="column">
-            <div class="column-text">Annotated Frame</div>
-            <img src="images/lscene1_0.png" alt="Challenging Scene Transition 1">
-            <img src="images/lscene2_0.png" alt="challenging Scene Transition 2">
-        </div>
-        <div class="column">
-            <div class="column-text">Last Frame</div>
-            <img src="images/lscene1_1.png" alt="Challenging Scene Transition 1">
-            <img src="images/lscene2_1.png" alt="challenging Scene Transition 2">
- 
-        </div>
-        <div class="text-column">
-            <div class="column-text">Text Prompts</div>
-            <div class="text-box">a comic-style road with a yellowish hue; a highway in real world</div>
-            <div class="text-box">a cartoon-style robot factory; a futuristic, high-tech robot that is painting</div>
-        </div>
-        <div class="column">
-            <div class="column-text">Ours</div>
-            <img src="images/lscene1_ours.gif" alt="Challenging Scene Transition Ours 1">
-            <img src="images/lscene2_ours.gif" alt="Challenging Scene Transition Ours 2">
-        </div>
-        <div class="column">
-            <div class="column-text">SparseCtrl</div>
-            <img src="images/lscene1_sc.gif" alt="Challenging Scene Transition SparseCtrl 1">
-            <img src="images/lscene2_sc.gif" alt="Challenging Scene Transition SparseCtrl 2">
-        </div>
-        <div class="column">
-            <div class="column-text">DiffMorpher</div>
-            <img src="images/lscene1_diff.gif" alt="Challenging Scene Transition DiffMorpher 1">
-            <img src="images/lscene2_diff.gif" alt="Challenging Scene Transition DiffMorpher 2">
-        </div>
-        <div class="column">
-            <div class="column-text">SEINE</div>
-            <img src="images/lscene1_seine.gif" alt="Challenging Scene Transition SEINE 1">
-            <img src="images/lscene2_seine.gif" alt="Challenging Scene Transition SEINE 2">
-        </div>
-        <div class="column">
-            <div class="column-text">DynamiCrafter</div>
-            <img src="images/lscene1_dyna.gif" alt="Challenging Scene Transition DynamiCrafter 1">
-            <img src="images/lscene2_dyna.gif" alt="Challenging Scene Transition DynamiCrafter 2">
-        </div>
-        <div class="column">
-            <div class="column-text">SGM-VFI</div>
-            <img src="images/lscene1_sgm.gif" alt="Challenging Scene Transition SGM-VFI 1">
-            <img src="images/lscene2_sgm.gif" alt="Challenging Scene Transition SGM-VFI 2">
-        </div>
-    </div>
 
 </body>
 <br>
