@@ -57,6 +57,15 @@
             text-align: left;
             box-sizing: border-box;
         }
+        .generative-column {
+            text-align: center; /* 保持文字居中 */
+            white-space: normal; /* 允许换行 */
+            overflow-wrap: break-word; /* 强制长词换行 */
+            height: 18px; /* 固定高度，确保换行后不挤压 */
+            display: flex; /* 使用 flex 布局 */
+            justify-content: center; /* 垂直居中 */
+            align-items: center; /* 水平居中 */
+        }
     </style>
 </head>
 <body>
@@ -129,7 +138,7 @@
             <img src="images/morph5_dyna.gif" alt="Object Morphing DynamiCrafter 5">
         </div>
         <div class="column">
-            <div class="column-text">Generative Inbetweening</div>
+            <div class="column-text generative-column">Generative Inbetweening</div>
             <img src="images/morph1_sgm.gif" alt="Object Morphing Generative Inbetweening 1">
             <img src="images/morph2_sgm.gif" alt="Object Morphing Generative Inbetweening 2">
             <img src="images/morph3_sgm.gif" alt="Object Morphing Generative Inbetweening 3">
@@ -207,7 +216,7 @@
             <img src="images/motion5_dyna.gif" alt="Motion Prediction DynamiCrafter 5">
         </div>
         <div class="column">
-            <div class="column-text">Generative Inbetweening</div>
+            <div class="column-text generative-column">Generative Inbetweening</div>
             <img src="images/motion1_sgm.gif" alt="Motion Prediction Generative Inbetweening 1">
             <img src="images/motion2_sgm.gif" alt="Motion Prediction Generative Inbetweening 2">
             <img src="images/motion3_sgm.gif" alt="Motion Prediction Generative Inbetweening 3">
@@ -286,7 +295,7 @@
             <img src="images/blend5_dyna.gif" alt="Concept Blending DynamiCrafter 5">
         </div>
         <div class="column">
-            <div class="column-text">Generative Inbetweening</div>
+            <div class="column-text generative-column">Generative Inbetweening</div>
             <img src="images/blend1_sgm.gif" alt="Concept Blending Generative Inbetweening 1">
             <img src="images/blend2_sgm.gif" alt="Concept Blending Generative Inbetweening 2">
             <img src="images/blend3_sgm.gif" alt="Concept Blending Generative Inbetweening 3">
@@ -365,7 +374,7 @@
             <img src="images/scene5_dyna.gif" alt="Scene Transition DynamiCrafter 5">
         </div>
         <div class="column">
-            <div class="column-text">Generative Inbetweening</div>
+            <div class="column-text generative-column">Generative Inbetweening</div>
             <img src="images/scene1_sgm.gif" alt="Scene Transition Generative Inbetweening 1">
             <img src="images/scene2_sgm.gif" alt="Scene Transition Generative Inbetweening 2">
             <img src="images/scene3_sgm.gif" alt="Scene Transition Generative Inbetweening 3">
@@ -451,7 +460,7 @@
             <img src="images/lmotion6_dyna.gif" alt="Challeging Motion Prediction DynamiCrafter 6">
         </div>
         <div class="column">
-            <div class="column-text">Generative Inbetweening</div>
+            <div class="column-text generative-column">Generative Inbetweening</div>
             <img src="images/lmotion1_sgm.gif" alt="Challeging Motion Prediction Generative Inbetweening 1">
             <img src="images/lmotion2_sgm.gif" alt="Challeging Motion Prediction Generative Inbetweening 2">
             <img src="images/lmotion3_sgm.gif" alt="Challeging Motion Prediction Generative Inbetweening 3">
@@ -505,8 +514,8 @@
             <img src="images/lscene1_dyna.gif" alt="Challenging Scene Transition DynamiCrafter 1">
             <img src="images/lscene2_dyna.gif" alt="Challenging Scene Transition DynamiCrafter 2">
         </div>
-        <div class="column">
-            <div class="column-text">Generative Inbetweening</div>
+        <div class="column"> 
+            <div class="column-text generative-column">Generative Inbetweening</div>
             <img src="images/lscene1_sgm.gif" alt="Challenging Scene Transition Generative Inbetweening 1">
             <img src="images/lscene2_sgm.gif" alt="Challenging Scene Transition Generative Inbetweening 2">
         </div>
